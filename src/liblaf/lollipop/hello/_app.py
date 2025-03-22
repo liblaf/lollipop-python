@@ -1,11 +1,14 @@
 from typing import Annotated
 
 import typer
-import typer_di
 
-app = typer_di.TyperDI(name="hello")
+from liblaf import lollipop
+
+app: typer.Typer = lollipop.new_app("hello")
 
 
 @app.command()
 def command(name: Annotated[str, typer.Argument()] = "world") -> None:
-    print(f"Hello, {name}!")
+    from . import main
+
+    main(name)
