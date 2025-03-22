@@ -1,0 +1,94 @@
+# -*- mode: toml; -*-
+#:schema https://json.schemastore.org/pyproject.json
+# ref: <https://packaging.python.org/en/latest/specifications/pyproject-toml/>
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatch-vcs", "hatchling"]
+
+[dependency-groups]
+build = ["check-wheel-contents", "hatch", "twine"]
+dev = ["icecream", "nuitka>=2.6.8", "pyinstaller>=6.12.0"]
+docs = [
+  "gitpython",
+  "mdx-truly-sane-lists",
+  "mkdocs",
+  "mkdocs-autorefs",
+  "mkdocs-gen-files",
+  "mkdocs-git-committers-plugin-2",
+  "mkdocs-git-revision-date-localized-plugin",
+  "mkdocs-literate-nav",
+  "mkdocs-material[imaging]",
+  "mkdocs-section-index",
+  "mkdocstrings",
+  "mkdocstrings-python",
+  "pymdown-extensions",
+  "ruff",
+]
+test = ["pytest", "pytest-codspeed", "pytest-cov", "pytest-xdist"]
+
+[project]
+authors = [
+  { email = "30631553+liblaf@users.noreply.github.com", name = "liblaf" },
+]
+classifiers = [
+  # common classifiers
+  # ref: <https://pypi.org/classifiers/>
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = [
+  "lazy-loader",
+  "liblaf-grapes>=0.1.10",
+  "loguru",
+  "rich",
+  "typer-di>=0.1.3",
+  "typer>=0.15.2",
+]
+description = "Add your description here"
+dynamic = ["version"]
+keywords = []
+license = "MIT"
+name = "liblaf-lollipop"
+readme = "docs/README.md"
+requires-python = ">=3.12"
+
+[project.urls]
+"Changelog" = "https://github.com/liblaf/lollipop-python/blob/main/CHANGELOG.md"
+"Documentation" = "https://liblaf.github.io/lollipop-python/"
+"Homepage" = "https://github.com/liblaf/lollipop-python"
+"Issue Tracker" = "https://github.com/liblaf/lollipop-python/issues"
+"Release Notes" = "https://github.com/liblaf/lollipop-python/releases"
+"Source Code" = "https://github.com/liblaf/lollipop-python"
+
+[tool.check-wheel-contents]
+ignore = ["W002"]
+
+[tool.coverage.run]
+branch = true
+source = ["src/"]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/liblaf/lollipop/_version.py"
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src/"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/liblaf/"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.pytest.ini_options]
+addopts = ["--numprocesses=auto"]
+junit_family = "legacy"
+testpaths = ["tests/"]
+
+[tool.uv]
+default-groups = ["build", "dev", "docs", "test"]
