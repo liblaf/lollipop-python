@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/SUMMARY/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/api/SUMMARY/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/api/liblaf/lollipop/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/api/liblaf/lollipop/hello/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/api/liblaf/lollipop/sort_toml/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+    <url>
+         <loc>https://liblaf.github.io/lollipop-python/api/liblaf/lollipop/utils/</loc>
+         <lastmod>2025-03-30</lastmod>
+    </url>
+</urlset>
