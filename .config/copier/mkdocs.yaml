@@ -11,8 +11,8 @@ site_url:
     "https://liblaf.github.io/lollipop-python/"
   ]
 site_author: "liblaf"
-repo_name: "/lollipop-python"
-repo_url: "https://github.com//lollipop-python"
+repo_name: "liblaf/lollipop-python"
+repo_url: "https://github.com/liblaf/lollipop-python"
 edit_uri: blob/main/docs/
 
 extra_css:
@@ -87,11 +87,12 @@ plugins:
       - docs/scripts/gen-ref-pages.py
   git-committers:
     enabled: !ENV [READTHEDOCS, CI, false]
-    repository: "/lollipop-python"
+    repository: "liblaf/lollipop-python"
     branch: main
   literate-nav:
   section-index:
   # External plugins, schema provided by our community
+  include-markdown:
   git-revision-date-localized:
     enable_creation_date: true
   mkdocstrings:
@@ -99,7 +100,7 @@ plugins:
     enable_inventory: true
     handlers:
       python:
-        import:
+        inventories:
           - https://docs.python.org/3/objects.inv
         options:
           # General
@@ -125,6 +126,7 @@ plugins:
           signature_crossrefs: true
   # External plugins, schema not provided
   autorefs:
+  mike:
 
 markdown_extensions:
   admonition:
@@ -138,6 +140,12 @@ markdown_extensions:
   toc:
     permalink: ¤
 
+extra:
+  version:
+    provider: mike
+
 watch:
+  - .config/copier/mkdocs.yaml
   - docs/
+  - README.md
   - src/
