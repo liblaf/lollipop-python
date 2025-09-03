@@ -43,7 +43,7 @@ TODO: DESCRIPTION
 To install `liblaf-lollipop`, run the following command:
 
 ```bash
-$ uv add liblaf-lollipop
+uv add liblaf-lollipop
 ```
 
 <div align="right">
@@ -61,9 +61,9 @@ You can use Github Codespaces for online development:
 Or clone it for local development:
 
 ```bash
-$ gh repo clone liblaf/lollipop-python
-$ cd lollipop-python
-$ just test
+gh repo clone liblaf/lollipop-python
+cd lollipop-python
+just test
 ```
 
 <div align="right">
